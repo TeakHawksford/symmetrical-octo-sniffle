@@ -1,0 +1,255 @@
+
+/* ========================= */
+/*       Base Imports        */
+/* ========================= */
+@import 'variables.scss';
+@import 'mixins';
+@import 'normalize';
+
+
+
+/* ========================= */
+/*       Stylesheet        */
+/* ========================= */
+
+/* Global Layout Set-up */
+* { 
+    box-sizing: border-box;
+  }
+    
+  body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: $color-font;
+  }
+
+  .wrapper {
+      display: flex;
+      flex-direction: column;
+      @include centered($width: 90%);
+      @media #{$break-tablet} {
+        flex-direction: row;
+    }
+  }
+  /* Link Styles */
+  
+  a {
+    text-decoration: none;
+    color: $color-links;
+        &:hover {
+            color: $color-links-hover;
+          }
+    }
+  
+  /* Section Styles */
+  
+  .main-nav {
+    display: flex;
+    width: 100%;
+    background: $color-black;
+    height: 105px;
+    position: fixed;
+    z-index: 1;
+    margin-top: -100px;
+  }
+  
+  .name {
+    color: $color-white;
+    @media #{$break-tablet} {
+        margin-right: auto;
+        align-self: center;
+    }
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    list-style-type: none;
+        li {
+            flex-grow: 1;
+            justify-content: space-between;
+            @media #{$break-tablet} {
+                margin-left: 30px;
+            }
+        }
+        a {
+        padding: 10px;
+        transition: all .5s;
+    }
+  }
+
+  header {
+    width: 100%;
+    display: block;
+    margin-top: 100px;
+    text-align: center;
+    background-image: url('../images/Desolation_Wilderness.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.5;
+    padding-bottom: 30px;
+        .profile-image {
+            @include roundy($dim: 150px, $brdr: 5px solid rgb(255, 136, 0));
+            margin-top: 50px;
+            border-radius: 50%;
+            transition: all 1.5s;
+            &:hover {
+                transform: scale(1.2) rotate(360deg);
+              }
+        }
+        .profile-info {
+            .tag {
+                background-color: $color-bg-profile;
+                color: $color-profile;
+                padding: 10px;
+                border-radius: 5px;
+                display: table;
+                margin: 10px auto;
+              } 
+              .location {
+                background-color: $color-font;
+                color: rgba($color: #cadf0e, $alpha: 1.0);
+              }
+        }
+  }
+
+  .contact-header {
+      background: none;
+  }
+
+  .flex {
+    background: url('../images/sandals.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media #{$break-tablet} {
+        display: flex;
+    }
+  }
+  
+  .card {
+    @include centered($width: 90%);
+    margin-bottom: 30px;
+    padding: 20px 40px;
+    background: $color-white;
+    @include bordered(
+      $bt: 3px solid rgb(223, 25, 25),
+      $br: 3px solid green,
+      $bb: 3px solid yellow,
+      $bl: 3px solid purple)
+      ;
+    border-radius: 6px;
+    transition: all .5s;
+        &:hover {
+        border-color: $color-profile;
+      }
+      &-1 {
+          @extend .card;
+          margin-bottom: 0;
+      }
+      @media #{$break-tablet} {
+          @include centered($width: 44%);
+          margin-bottom: 0;
+      }
+  }
+  
+  .skills li {
+    border-radius: 6px;
+    display: inline-block;
+    background: #ff9904;
+    color: $color-white;
+    padding: 5px 10px;
+    margin: 2px;
+        &:nth-child(odd) {
+            background: #0399ff;
+        }
+  }
+
+  .workexperience {
+      text-align: left;
+        li p {
+            margin: -3px 0 10px 48px;
+        }
+  }
+
+  .big-wrapper {
+      min-height: calc(100vh - 89px);
+  }
+
+  .big-wrapper-1 {
+      @extend .big-wrapper;
+      background: url('../images/Desolation_Wilderness.jpg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(162, 0, 177);
+    width: 100%;
+    height: 89px;
+       .copyright {
+            top: -8px;
+            font-size: .75em;
+          }
+          ul {
+            padding-top: 14.5px;
+            list-style-type: none;
+          }  
+          ul li {
+            display: inline-block;
+          }
+  }
+  
+  .social {
+    display: inline-block;
+    text-indent: -9999px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    transition: all .5s;
+        &:hover {
+            transform: scale(2);
+        }
+  }
+
+  .twitter {
+    background-image: url(../images/twitter.svg);
+  }
+  .linkedin {
+    background-image: url(../images/linkedin.svg);
+  }
+  .github {
+    background-image: url(../images/github.svg);
+  }
+  .facebook {
+    background-image: url(../images/facebook.svg);
+  }
+  .instagram {
+    background-image: url(../images/instagram.svg);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

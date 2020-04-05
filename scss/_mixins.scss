@@ -1,0 +1,30 @@
+/* ========================= */
+/*       Mixins              */
+/* ========================= */
+
+@mixin centered($margin: auto, $width) {
+    width: $width;
+    margin-left: $margin;
+    margin-right: $margin;
+    @content;
+}
+
+@mixin roundy($dim, $brdr) {
+    width: $dim;
+    height: $dim;
+    border: $brdr;
+    border-radius: 50%;
+    @content;
+}
+
+@mixin bordered(
+    $bt: 3px solid $color-black,
+    $br: null,
+    $bb: null,
+    $bl: null) {
+        border-top: $bt;
+        border-right: $br;
+        border-bottom: $bb;
+        border-left: $bl;
+        @content;
+}

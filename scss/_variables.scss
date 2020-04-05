@@ -1,0 +1,19 @@
+/* ========================= */
+/*       Variables           */
+/* ========================= */
+
+$color-font: rgb(34, 34, 34);
+$color-links: rgb(1, 183, 255);
+$color-links-hover: rgb(202, 16, 16);
+
+$color-black: rgb(0,0,0);
+$color-white: rgb(255,255,255);
+
+$color-bg-profile: rgb(71, 238, 20);
+$color-profile: complement($color-bg-profile);
+
+/* ========================= */
+/*       Media Query BRK     */
+/* ========================= */
+
+$break-tablet: '(min-width: 768px)';
